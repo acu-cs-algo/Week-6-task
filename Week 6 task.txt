@@ -1,0 +1,49 @@
+package javaapplication3;
+import java.util.Scanner;
+public class JavaApplication3 {   
+    public static void main(String[] args) 
+    {
+        int  number1=0;
+        int  number2=0;
+        int  gcd=0;
+      System.out.println(" enter two numbers to ply  the game  ") ;
+      System.out.print(">>") ;
+      Scanner input = new Scanner(System.in);
+      int  n1 = input.nextInt();
+      System.out.print(">>") ;
+      Scanner input2 = new Scanner(System.in);
+        int   n2 = input2.nextInt();
+        if (n1>=n2)
+       {
+          number1=n1;  
+          number2=n2;
+       }
+        else 
+        {
+         number1=n2;
+         number2=n1;
+        }
+       gcd = GCD(number1,number2);
+       System.out.println( " GCD = " +gcd) ;
+       if ( (number1 / gcd)%2 == 0)
+       {
+            System.out.println(" the seconde player will win ") ;
+           
+       }
+       else 
+       {
+           System.out.println(" the first player will win ") ;
+           
+       }
+        }
+ public static int   GCD(int  number1 ,int   number2) 
+ {
+     if (number2 == 0)
+     
+        return number1;
+     else 
+         return GCD(number2,number1 % number2);
+     
+ }
+    
+}
